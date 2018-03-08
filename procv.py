@@ -1,5 +1,5 @@
 from openpyxl import load_workbook
-wb = load_workbook(filename='teste.xlsx', read_only=False)
+wb = load_workbook(filename='test.xlsx', read_only=False)
 ws = wb['Sheet']
 
 # Contador de linha e delimitador de linhas da planilha
@@ -7,9 +7,9 @@ line = 1
 lines = 10
 
 # Talvez essas linhas aqui estão sendo inuteis, só talvez
-check1 = ws.iter_cols(min_row=linha, min_col=2, max_col=2, max_row=linha)
-check2 = ws.iter_cols(min_row=linha, min_col=8, max_col=8, max_row=linha)
-nnfe = ws.iter_cols(min_row=linha, min_col=7, max_col=7, max_row=linha)
+check1 = ws.iter_cols(min_row=line, min_col=2, max_col=2, max_row=line)
+check2 = ws.iter_cols(min_row=line, min_col=8, max_col=8, max_row=line)
+nnfe = ws.iter_cols(min_row=line, min_col=7, max_col=7, max_row=line)
 
 # Listas
 nomes1 = []
@@ -19,7 +19,7 @@ linhanfe = []
 
 for col in ws.iter_cols(min_row=1, min_col=8, max_col=8, max_row=lines):
     for cell in col:
-        linha += 1
+        line += 1
         check1 = cell.value
         
 for col in ws.iter_cols(min_row=1, min_col=2, max_col=2, max_row=lines):
